@@ -2,7 +2,6 @@ package catchBox;
 
 import agentSearch.Action;
 import agentSearch.State;
-import sun.reflect.generics.reflectiveObjects.NotImplementedException;
 
 import java.awt.*;
 import java.util.ArrayList;
@@ -12,10 +11,24 @@ public class CatchState extends State implements Cloneable {
     //TODO this class might require the definition of additional methods and/or attributes
 
     protected int[][] matrix;
+    private int lineBlank;
+    private int columnBlank;
 
     public CatchState(int[][] matrix) {
         //TODO
-        throw new NotImplementedException();
+        this.matrix = new int[matrix.length][matrix.length];
+
+        for (int i = 0; i < matrix.length; i++){
+            for (int j = 0; j < matrix.length; i++){
+                this.matrix[i][j] = matrix[i][j];
+                if (this.matrix[i][j] == 0){
+                    lineBlank = i;
+                    columnBlank = j;
+                }
+            }
+        }
+
+        throw new UnsupportedOperationException("Not Implemented Yet");
     }
 
     public void executeAction(Action action) {
@@ -23,57 +36,61 @@ public class CatchState extends State implements Cloneable {
         // TODO
         fireUpdatedEnvironment();
 
-        throw new NotImplementedException(); // delete after implementing
+        throw new UnsupportedOperationException("Not Implemented Yet"); // delete after implementing
     }
 
     public boolean canMoveUp() {
         //TODO
-        throw new NotImplementedException();
+        return lineBlank != 0;
     }
 
     public boolean canMoveRight() {
         //TODO
-        throw new NotImplementedException();
+        return columnBlank != matrix.length - 1;
     }
 
     public boolean canMoveDown() {
         //TODO
-        throw new NotImplementedException();
+        return lineBlank != matrix.length - 1;
     }
 
     public boolean canMoveLeft() {
         //TODO
-        throw new NotImplementedException();
+        return columnBlank != 0;
     }
 
     public void moveUp() {
         //TODO
-        throw new NotImplementedException();
+        matrix[lineBlank][columnBlank] = matrix[--lineBlank][columnBlank];
+        matrix[lineBlank][columnBlank] = 0;
     }
 
     public void moveRight() {
         //TODO
-        throw new NotImplementedException();
+        matrix[lineBlank][columnBlank] = matrix[lineBlank][++columnBlank];
+        matrix[lineBlank][columnBlank] = 0;
     }
 
     public void moveDown() {
         //TODO
-        throw new NotImplementedException();
+        matrix[lineBlank][columnBlank] = matrix[++lineBlank][columnBlank];
+        matrix[lineBlank][columnBlank] = 0;
     }
 
     public void moveLeft() {
         //TODO
-        throw new NotImplementedException();
+        matrix[lineBlank][columnBlank] = matrix[lineBlank][--columnBlank];
+        matrix[lineBlank][columnBlank] = 0;
     }
 
     public int getNumBox() {
         //TODO
-        throw new NotImplementedException();
+        throw new UnsupportedOperationException("Not Implemented Yet");
     }
 
     public void setCellCatch(int line, int column) {
         //TODO
-        throw new NotImplementedException();
+        throw new UnsupportedOperationException("Not Implemented Yet");
     }
 
     public int[][] getMatrix() {
@@ -82,12 +99,12 @@ public class CatchState extends State implements Cloneable {
 
     public void setGoal(int line, int column) {
         //TODO
-        throw new NotImplementedException();
+        throw new UnsupportedOperationException("Not Implemented Yet");
     }
 
     public int getSteps() {
         //TODO
-        throw new NotImplementedException();
+        throw new UnsupportedOperationException("Not Implemented Yet");
     }
 
     public int getSize() {
@@ -145,7 +162,7 @@ public class CatchState extends State implements Cloneable {
     @Override
     public CatchState clone() {
         //TODO
-        throw new NotImplementedException();
+        throw new UnsupportedOperationException("Not Implemented Yet");
     }
 
     //Listeners
