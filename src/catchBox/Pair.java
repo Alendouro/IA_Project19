@@ -1,9 +1,9 @@
 package catchBox;
 
 public class Pair {
-    private Cell cell1;
-    private Cell cell2;
-    private int value;
+    private Cell cell1; //origem (e.g. 0-2)
+    private Cell cell2; //destino (e.g., 2-0)
+    private int value; //cursto (e.g., 4)
 
     public Pair(Cell cell1, Cell cell2) {
         this.cell1 = cell1;

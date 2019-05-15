@@ -12,8 +12,8 @@ public class CatchProblemSearch<S extends CatchState> extends Problem<S> {
     public CatchProblemSearch(S initialCatchState, Cell goalPosition) {
         super(initialCatchState);
 
-        //TODO
-        throw new UnsupportedOperationException("Not Implemented Yet");
+        initialCatchState.setGoal(goalPosition.getLine(), goalPosition.getColumn());
+        this.goalState = new CatchState(initialCatchState.getMatrix());
     }
 
     @Override
@@ -23,7 +23,6 @@ public class CatchProblemSearch<S extends CatchState> extends Problem<S> {
     }
 
     public boolean isGoal(S state) {
-        //TODO
-        throw new UnsupportedOperationException("Not Implemented Yet");
+        return goalState.getColumnGoal() == state.getCatchColumn() && goalState.getLineGoal() == state.getCatchLine();
     }
 }
