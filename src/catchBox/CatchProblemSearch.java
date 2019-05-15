@@ -7,6 +7,8 @@ import java.util.List;
 public class CatchProblemSearch<S extends CatchState> extends Problem<S> {
     //TODO this class might require the definition of additional methods and/or attributes
 
+    private final CatchState goalState;
+
     public CatchProblemSearch(S initialCatchState, Cell goalPosition) {
         super(initialCatchState);
 
