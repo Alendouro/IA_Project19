@@ -38,55 +38,43 @@ public class CatchState extends State implements Cloneable {
 
     public void executeAction(Action action) {
         action.execute(this);
-        // TODO
-        fireUpdatedEnvironment();
-
-        throw new UnsupportedOperationException("Not Implemented Yet"); // delete after implementing
     }
 
     public boolean canMoveUp() {
-        //TODO
         return lineBlank != 0;
     }
 
     public boolean canMoveRight() {
-        //TODO
         return columnBlank != matrix.length - 1;
     }
 
     public boolean canMoveDown() {
-        //TODO
         return lineBlank != matrix.length - 1;
     }
 
     public boolean canMoveLeft() {
-        //TODO
         return columnBlank != 0;
     }
 
     public void moveUp() {
-        //TODO
         matrix[lineBlank][columnBlank] = matrix[--lineBlank][columnBlank];
         matrix[lineBlank][columnBlank] = 0;
         steps++;
     }
 
     public void moveRight() {
-        //TODO
         matrix[lineBlank][columnBlank] = matrix[lineBlank][++columnBlank];
         matrix[lineBlank][columnBlank] = 0;
         steps++;
     }
 
     public void moveDown() {
-        //TODO
         matrix[lineBlank][columnBlank] = matrix[++lineBlank][columnBlank];
         matrix[lineBlank][columnBlank] = 0;
         steps++;
     }
 
     public void moveLeft() {
-        //TODO
         matrix[lineBlank][columnBlank] = matrix[lineBlank][--columnBlank];
         matrix[lineBlank][columnBlank] = 0;
         steps++;

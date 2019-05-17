@@ -1,7 +1,9 @@
 package catchBox;
 
+import agentSearch.Action;
 import agentSearch.Problem;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class CatchProblemSearch<S extends CatchState> extends Problem<S> {
@@ -19,7 +21,16 @@ public class CatchProblemSearch<S extends CatchState> extends Problem<S> {
     @Override
     public List<S> executeActions(S state) {
         //TODO
-        throw new UnsupportedOperationException("Not Implemented Yet");
+        List<S> successors = new ArrayList<>();
+        for (Action action : availableActions) {
+            if(action.isValid(state)) {
+                S successor = (S) state.clone();
+                action.execute(successor);
+                successors.add(successor);
+            }
+        }
+        //TODO
+        return successors;
     }
 
     public boolean isGoal(S state) {
