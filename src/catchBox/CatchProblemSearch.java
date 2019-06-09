@@ -44,6 +44,10 @@ public class CatchProblemSearch<S extends CatchState> extends Problem<S> {
         return successors;
     }
 
+    public Cell getGoalPosition() {
+        return goalPosition;
+    }
+
     public boolean isGoal(S state) {
         return goalPosition.getColumn() == state.getCatchColumn() && goalPosition.getLine() == state.getCatchLine();
     }
