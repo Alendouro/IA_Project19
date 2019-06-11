@@ -2,6 +2,8 @@ package catchBox;
 
 import ga.IntVectorIndividual;
 
+import java.util.LinkedList;
+
 public class CatchIndividual extends IntVectorIndividual<CatchProblemForGA, CatchIndividual> {
 
     public CatchIndividual(CatchProblemForGA problem, int size) {
@@ -14,8 +16,16 @@ public class CatchIndividual extends IntVectorIndividual<CatchProblemForGA, Catc
 
     @Override
     public double computeFitness() {
-        //TODO
-        throw new UnsupportedOperationException("Not Implemented Yet");
+        double fitness = 0;
+        LinkedList<Cell> boxes = problem.getCellsBoxes();
+        Cell catchCell = problem.getCellCatch();
+        Cell door = problem.getDoor();
+        for (int i = 0; i < genome.length - 1; i++) {
+            if (genome[i] == 1){
+                ++fitness;
+            }
+        }
+        return fitness;
     }
 
     public int[] getGenome() {

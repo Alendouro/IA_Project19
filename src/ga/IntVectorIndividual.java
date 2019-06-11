@@ -1,5 +1,7 @@
 package ga;
 
+import java.util.Random;
+
 public abstract class IntVectorIndividual<P extends Problem, I extends IntVectorIndividual> extends Individual<P, I> {
     //TODO this class might require the definition of additional methods and/or attributes
 
@@ -8,9 +10,11 @@ public abstract class IntVectorIndividual<P extends Problem, I extends IntVector
     public IntVectorIndividual(P problem, int size) {
         super(problem);
         genome = new int[size];
+        Random rn = new Random();
 
-        //TODO
-        throw new UnsupportedOperationException("Not Implemented Yet");
+        for (int i = 0; i < genome.length; i++) {
+            genome[i] = Math.abs(rn.nextInt() % 2);
+        }
       }
 
     public IntVectorIndividual(IntVectorIndividual<P, I> original) {
