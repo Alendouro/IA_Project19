@@ -10,12 +10,22 @@ public abstract class IntVectorIndividual<P extends Problem, I extends IntVector
     public IntVectorIndividual(P problem, int size) {
         super(problem);
         genome = new int[size];
-        Random rn = new Random();
-
-        for (int i = 0; i < genome.length; i++) {
-            genome[i] = Math.abs(rn.nextInt() % 2);
+        int r;
+        for (int i = 0; i <genome.length ; i++) {
+            do{
+                r = GeneticAlgorithm.random.nextInt(size) + 1;
+            } while(repeatedGenome(r, i));
+            genome[i] = r;
         }
       }
+
+    private boolean repeatedGenome(int r, int j) {
+        for (int i = 0; i < j ; i++) {
+            if (genome[i] == r) return true;
+        }
+        return false;
+    }
+
 
     public IntVectorIndividual(IntVectorIndividual<P, I> original) {
         super(original);
