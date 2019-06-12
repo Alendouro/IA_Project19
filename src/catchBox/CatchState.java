@@ -8,7 +8,6 @@ import java.util.ArrayList;
 import java.util.Arrays;
 
 public class CatchState extends State implements Cloneable {
-    //TODO this class might require the definition of additional methods and/or attributes
 
     protected int[][] matrix;
     private int steps;

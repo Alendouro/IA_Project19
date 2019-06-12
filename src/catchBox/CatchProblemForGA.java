@@ -5,7 +5,6 @@ import ga.Problem;
 import java.util.LinkedList;
 
 public class CatchProblemForGA implements Problem<CatchIndividual> {
-    //TODO this class might require the definition of additional methods and/or attributes
     private LinkedList<Cell> cellsBoxes;
     private LinkedList<Pair> pairs;
     private Cell cellCatch;

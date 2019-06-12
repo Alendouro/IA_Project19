@@ -8,7 +8,6 @@ import java.util.LinkedList;
 import java.util.List;
 
 public class CatchProblemSearch<S extends CatchState> extends Problem<S> {
-    //TODO this class might require the definition of additional methods and/or attributes
 
     private LinkedList<Action> actions;
 
