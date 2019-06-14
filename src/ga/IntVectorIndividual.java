@@ -19,6 +19,10 @@ public abstract class IntVectorIndividual<P extends Problem, I extends IntVector
         }
       }
 
+    public int[] getGenome() {
+        return genome;
+    }
+
     private boolean repeatedGenome(int r, int j) {
         for (int i = 0; i < j ; i++) {
             if (genome[i] == r) return true;

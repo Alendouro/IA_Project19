@@ -54,21 +54,25 @@ public class CatchState extends State implements Cloneable {
     public void moveUp() {
         matrix[catchLine][catchColumn] = Properties.EMPTY;
         matrix[--catchLine][catchColumn] = Properties.CATCH;
+        steps ++;
     }
 
     public void moveRight() {
         matrix[catchLine][catchColumn] = Properties.EMPTY;
         matrix[catchLine][++catchColumn] = Properties.CATCH;
+        steps ++;
     }
 
     public void moveDown() {
         matrix[catchLine][catchColumn] = Properties.EMPTY;
         matrix[++catchLine][catchColumn] = Properties.CATCH;
+        steps ++;
     }
 
     public void moveLeft() {
         matrix[catchLine][catchColumn] = Properties.EMPTY;
         matrix[catchLine][--catchColumn] = Properties.CATCH;
+        steps ++;
     }
 
     public double computeDistance(Cell goalPosition) {
