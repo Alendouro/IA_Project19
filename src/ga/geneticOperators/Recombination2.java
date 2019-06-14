@@ -21,8 +21,6 @@ public class Recombination2<I extends IntVectorIndividual, P extends Problem<I>>
         child2 = new int[ind1.getNumGenes()];
         int aux1 = 0;
         int aux2 = 0;
-        System.out.println("Ind 1" + Arrays.toString(ind1.getGenome()));
-        System.out.println("Ind 2" + Arrays.toString(ind2.getGenome()));
 
         for (int i = 1; i < ind2.getGenome().length - 1; i++) {
             child1[i] = ind2.getGenome()[i];
@@ -44,7 +42,6 @@ public class Recombination2<I extends IntVectorIndividual, P extends Problem<I>>
             ind1.setGene(i, child1[i]);
             ind2.setGene(i, child2[i]);
         }
-        System.out.println("Child: " + Arrays.toString(child2));
     }
 
     public boolean containsNumber(int [] ind, int num){
