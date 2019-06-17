@@ -6,11 +6,11 @@ import ga.Problem;
 
 import java.util.Arrays;
 
-public class Recombination2<I extends IntVectorIndividual, P extends Problem<I>> extends Recombination<I, P> {
+public class RecombinationOrder1Crossover<I extends IntVectorIndividual, P extends Problem<I>> extends Recombination<I, P> {
 
     private int[] child1, child2;
 
-    public Recombination2(double probability) {
+    public RecombinationOrder1Crossover(double probability) {
         super(probability);
     }
 

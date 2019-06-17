@@ -5,11 +5,11 @@ import ga.Problem;
 
 import java.util.*;
 
-public class Recombination3<I extends IntVectorIndividual, P extends Problem<I>> extends Recombination<I, P> {
+public class RecombinationCycle<I extends IntVectorIndividual, P extends Problem<I>> extends Recombination<I, P> {
 
     private int[] child1, child2;
 
-    public Recombination3(double probability) {
+    public RecombinationCycle(double probability) {
         super(probability);
     }
 

@@ -44,7 +44,6 @@ public class CatchProblemForGA implements Problem<CatchIndividual> {
 
     @Override
     public String toString() {
-        //TODO
-        throw new UnsupportedOperationException("Not Implemented Yet");
+        return "Cells boxes: " + cellsBoxes.size();
     }
 }
